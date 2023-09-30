@@ -1,0 +1,183 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>contact</title>
+    <style type="text/css">
+        body {
+        font-family: Arial, Helvetica, sans-serif;
+        }
+
+         /*Hoverable Sidenav Buttons*/
+        #mySidenav a {
+        position: absolute;
+        left: -80px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 100px;
+        text-decoration: none;
+        color: white;
+        border-radius: 0 5px 5px 0;
+        }
+
+        #mySidenav a:hover {
+        left: 0;
+        }
+
+        #anykasut {
+        top: 20px;
+        font-size: 16px;
+        background-color: #bbab9b;
+        }
+
+        #men {
+        top: 80px;
+        font-size: 20px;
+        background-color:#d4ac6e;
+        }
+
+        #women {
+        top: 140px;
+        font-size: 20px;
+        background-color: #8b6f47;
+        }
+
+        #aboutus {
+        top: 200px;
+        font-size: 16px;
+        background-color: #7e4a35;
+        }
+
+        #contact {
+        top: 260px;
+        font-size: 16px;
+        background-color: #4f3222;
+        }
+
+
+        * {
+        box-sizing: border-box;
+        }
+
+        /* Style inputs */
+        input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+        }
+
+        .btn.input{
+        background-color: #0c0f0e;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        }
+
+        .btn:hover {
+        background-color: #fafefb;
+        color: #0c0f0e;
+        }
+
+        /* Style the container/contact section */
+        .container {
+        border-radius: 5px;
+        background-color: rgb(97, 134, 133);
+        padding: 20px;
+        }
+
+        /* Create two columns that float next to eachother */
+        .column {
+        float: left;
+        width: 50%;
+        margin-top: 6px;
+        padding: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+        content: "";
+        display: table;
+        clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+        .column, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+      }
+        </style>
+</head>
+<body>
+  
+    <div id="mySidenav" class="sidenav">
+        <a href="homepage.html" id="anykasut">anykasut</a>
+        <a href="men.html" id="men">men</a>
+        <a href="women.html" id="women">women</a>
+        <a href="about us.html" id="aboutus">about us</a>
+        <a href="contact.html" id="contact">Contact</a>
+      </div>
+<div class="container">
+  <div style="text-align:center">
+    <h2 >CONTACT US</h2>
+    <p>Buy your favorite shoes, or leave us a message:</p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img src="https://i.pinimg.com/originals/c0/2a/14/c02a14ee95c5c32bd8f6bdf02b2a5946.gif" style="width:100%">
+    </div>
+    <div class="column">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" class="input_field" name="firstname" placeholder="Your name.."><br>
+      <label for="email">Email</label>
+      <input type="text" id="email" class="input_field" name="email" placeholder="Your email"><br>
+      <label for="country">Country</label>
+            <select id="country" name="country" class="input_field">
+              <option value="malaysia">Malaysia</option>
+              <option value="thailand">Thailand</option>
+              <option value="indonesia">Indonesia</option>
+            </select>
+      <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" class="input_field" placeholder="Write something.." style="height:170px"></textarea>
+            <input onclick="saySubmit()" id="submit" class="btn" value="SUBMIT"/>
+            <input onclick="saveDraft()" id="save" class="btn" value="SAVE DRAFT"/>
+
+          </form>
+    </div>
+    
+    <p id="message"></p>
+        <script type="text/javascript">
+            //call submit button function
+            function saySubmit()
+            {
+    
+                //call value from input box
+                var fname = document.getElementById("fname").value 
+                var email = document.getElementById("email").value
+                var country = document.getElementById("country").value
+                var subject = document.getElementById("subject").value
+
+                var greetMessage = "Hai <br> First Name:" + fname + "<br> Email:" + email + "<br> country:" + country + "<br> Subject:" + subject;
+                document.getElementById("message").innerHTML=greetMessage
+            }
+
+          function saveDraft(){
+                var submit = document.getElementById("submit");
+                //submit.setAttribute("disabled",true);
+                //if the button is disabled
+                if(submit.disabled){
+                    submit.removeAttribute("disabled");
+                    document.getElementById("save").innerHTML="SAVE DRAFT";
+                }
+                else{
+                    //disabled it
+                    submit.setAttribute("disabled",true);
+                    document.getElementById("save").innerHTML="DONE";
+                }
+          }
+        </script>

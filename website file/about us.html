@@ -1,0 +1,155 @@
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>about us</title>
+    <style type="text/css">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+       /*Hoverable Sidenav Buttons*/
+      #mySidenav a {
+        position: absolute;
+        left: -80px;
+        transition: 0.3s;
+        padding: 15px;
+        width: 100px;
+        text-decoration: none;
+        border-radius: 0 5px 5px 0;
+      }
+
+      #mySidenav a:hover {
+        left: 0;
+      }
+
+      #anykasut {
+        top: 20px;
+        font-size: 16px;
+        color: black;
+        background-color: #96ceb4;
+      }
+
+      #men {
+        top: 80px;
+        font-size: 20px;
+        color: black;
+        background-color: #ffeead;
+      }
+
+      #women {
+        top: 140px;
+        font-size: 20px;
+        color: black;
+        background-color: #ffcc5c;
+      }
+
+      #aboutus {
+        top: 200px;
+        font-size: 16px;
+        color: black;
+        background-color: #ff6f69;
+      }
+
+      #contact {
+        top: 260px;
+        font-size: 16px;
+        color: #090101;
+        background-color: #d96459;
+      }
+  
+      html {
+        box-sizing: border-box;
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        background-size: cover;
+        color: white;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) , url(banner.jpeg);
+      }
+
+      
+      .container {
+        padding: 0 16px;
+      }
+      
+      .container::after, .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
+      .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+      }
+      
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
+      </style>
+      </head>
+      <body>
+        <!--NAVIGATION BAR-->
+        <div id="mySidenav" class="sidenav">
+          <a href="homepage.html" id="anykasut">anykasut</a>
+          <a href="men.html" id="men">men</a>
+          <a href="women.html" id="women">women</a>
+          <a href="about us.html" id="aboutus">about us</a>
+          <a href="contact.html" id="contact">Contact</a>
+        </div>
+      <div class="about-section">
+        <h1>About Us</h1>
+        <div id="content"></div>
+      </div>
+      <h2><center>OUR PARTNERS</center></h2>
+        <!--PICTURE SETTINGS-->
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <img src="New Balance.jpeg" alt="Jane" style="width:100%">
+          </div>
+        </div>
+      
+        <div class="column">
+          <div class="card">
+            <img src="Nike.jpeg" alt="Mike" style="width:100%">
+          </div>
+        </div>
+        
+        <div class="column">
+          <div class="card">
+            <img src="adidas.jpeg" alt="John" style="width:100%">
+          </div>
+        </div>
+      </div>
+      </body>
+      </html>
+      <script>
+          
+            const p = document.createElement('p');
+
+            p.textContent = "ANYKASUT is the sports fashion retailer in Malaysia. With many limited edition and exclusive designs from Adidas, New Balance and Nike.";
+            p.setAttribute('id','element-insert');
+            p.setAttribute('class','text-normal padding');
+
+            document.getElementById('content').append(p);
+
+           
+      </script>
